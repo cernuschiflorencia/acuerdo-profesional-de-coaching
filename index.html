@@ -273,36 +273,39 @@
             background: white;
             border: 2px solid #dee2e6;
             border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
         }
 
         .signature-box .label {
             font-weight: 700;
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
         }
 
         .signature-box .name-field {
             color: #666;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
         }
 
         .signature-line {
             border-top: 2px solid #adb5bd;
-            margin-top: 3rem;
-            padding-top: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 0.4rem;
             text-align: center;
         }
 
         .signature-line p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
         }
 
         .date-field {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             color: #666;
+            font-size: 0.9rem;
         }
 
         /* Footer */
@@ -446,6 +449,35 @@
             .container {
                 box-shadow: none;
             }
+
+            /* Mantener la sección de firmas junta */
+            .signature-section {
+                page-break-before: always;
+                page-break-inside: avoid;
+            }
+
+            .signature-section h3 {
+                page-break-after: avoid;
+            }
+
+            .agreement-text {
+                page-break-after: avoid;
+            }
+
+            .signature-box {
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Evitar que el footer quede solo en una página */
+            .footer {
+                page-break-inside: avoid;
+            }
+
+            /* Opcional: ajustar espaciado en impresión */
+            .signature-section {
+                margin-top: 2rem;
+            }
         }
     </style>
 </head>
@@ -460,7 +492,7 @@
         <div class="content">
             <!-- Title -->
             <div class="title-section">
-                <h3>Coaching para Emprendimiento</h3>
+                <h2>Coaching para Emprendimiento</h2>
             </div>
 
             <!-- Info Block -->
@@ -673,8 +705,8 @@
         <!-- Footer -->
         <div class="footer">
             <div class="footer-header">
-                <h2>CALIMBA</h2>
-                <p>Profesionales en el camino</p>
+                <h2>PROFESIONALES EN EL CAMINO</h2>
+                <p>CALIMBA</p>
             </div>
             
             <div class="footer-contact">
@@ -704,29 +736,12 @@
         <button onclick="window.print()" style="margin-left: 1rem; background: #764ba2;">Imprimir</button>
     </div>
 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         function downloadPDF() {
-            const element = document.querySelector('.container');
-            const button = document.querySelector('.print-button');
-            
-            // Ocultar el botón temporalmente
-            button.style.display = 'none';
-            
-            const opt = {
-                margin: 10,
-                filename: 'Propuesta_Coaching_Calimba.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Mostrar el botón nuevamente
-                button.style.display = 'block';
-            });
+            // Simplemente usar la función de imprimir nativa que funciona mejor
+            // El usuario puede elegir "Guardar como PDF" en el diálogo
+            window.print();
         }
     </script>
-    
 </body>
 </html>
