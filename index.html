@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/favicon-32x32.png">
+    <title>Propuesta de Acompañamiento - Coaching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+        }
+
+        /* Content */
+        .content {
+            padding: 3rem 2.5rem;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .title-section p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .info-block {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-block p {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-block strong {
+            color: #333;
+        }
+
+        .text-content {
+            margin-bottom: 2rem;
+        }
+
+        .text-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e9ecef;
+            margin: 2.5rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .objectives-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .objective-card:hover {
+            background: #f0f4ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .objective-card h4 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #e8eeff 0%, #f0f4ff 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 2px solid #667eea;
+        }
+
+        .pricing-card h4 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 0.5rem 0;
+        }
+
+        .pricing-card .note {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-card-simple {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card-simple h4 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card-simple .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .pricing-card-simple p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .special-box {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .special-box h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .special-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .closing-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .closing-section p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .closing-section .signature {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-top: 1rem;
+        }
+
+        .signature-section {
+            margin-top: 3rem;
+        }
+
+        .signature-section h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .agreement-text {
+            background: #f0f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .agreement-text p {
+            color: #666;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .signature-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .signature-box .label {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .signature-box .name-field {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-line {
+            border-top: 2px solid #adb5bd;
+            margin-top: 3rem;
+            padding-top: 0.5rem;
+            text-align: center;
+        }
+
+        .signature-line p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .date-field {
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-header p {
+            font-size: 1.1rem;
+        }
+
+        .footer-contact {
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item strong {
+            font-weight: 600;
+        }
+
+        .separator {
+            display: none;
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .footer-link a {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link a:hover {
+            color: #e0e7ff;
+        }
+
+        .print-button {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .print-button button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .print-button button:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (min-width: 768px) {
+            .separator {
+                display: inline;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .content {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .title-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .contact-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>PROPUESTA DE ACOMPAÑAMIENTO</h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Title -->
+            <div class="title-section">
+                <h3>Coaching para Emprendimiento</h3>
+            </div>
+
+            <!-- Info Block -->
+            <div class="info-block">
+                <p><strong>Para:</strong> Euge y Fer</p>
+                <p><strong>De:</strong> Flor Cernuschi - Coach Profesional</p>
+                <p><strong>Fecha:</strong> Diciembre 2024</p>
+            </div>
+
+            <!-- Introduction -->
+            <div class="text-content">
+                <p>Gracias nuevamente por el encuentro de hoy. Fue un placer conocerlas y escuchar la visión que tienen para el emprendimiento de carteras y zapatos que están creando juntas.</p>
+                <p>Tal como conversamos, les comparto esta propuesta de acompañamiento como coach para el lanzamiento de su proyecto, pensada para ayudarlas a ordenar ideas, tomar decisiones estratégicas y transitar este proceso con foco, claridad y liderazgo compartido.</p>
+            </div>
+
+            <hr>
+
+            <!-- Objectives -->
+            <h3 class="section-title">Objetivos del Acompañamiento</h3>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h4>1. Selección de proveedor y customización del producto</h4>
+                    <p>Acompañamiento en la toma de decisiones vinculadas a proveedores, criterios de elección y definición del producto, alineando identidad, costos, calidad y propuesta de valor.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>2. Selección de marketplace y armado del marketplace</h4>
+                    <p>Definición del canal de venta más adecuado y acompañamiento en el armado conceptual del marketplace como eje central de comercialización en esta primera etapa.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>3. Definición y estrategia de entrega</h4>
+                    <p>Trabajo sobre la experiencia de entrega: logística, tiempos, comunicación y coherencia con la marca, cuidando la experiencia del cliente final.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>4. Redes sociales – foco en Instagram</h4>
+                    <p>Acompañamiento estratégico para definir el rol de Instagram en el lanzamiento: mensaje, objetivos, organización de contenidos y coherencia entre marca, producto y comunicación.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>5. Página web (segunda etapa)</h4>
+                    <p>La página web se plantea como una segunda fase del proyecto, una vez que el marketplace esté en funcionamiento y validado.</p>
+                </div>
+
+                <div class="objective-card">
+                    <h4>6. Acompañamiento, liderazgo y gestión</h4>
+                    <p>Espacio de coaching orientado a la organización del trabajo en equipo, definición de roles, liderazgo emprendedor, toma de decisiones y gestión emocional del proceso emprendedor.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Modalidad -->
+            <h3 class="section-title">Modalidad de Trabajo</h3>
+            <div class="highlight-box">
+                <p>• Sesiones grupales de coaching, pensadas para trabajar juntas el proceso del emprendimiento</p>
+                <p>• Espacios de reflexión, orden y toma de decisiones conscientes</p>
+                <p>• Acompañamiento durante el proceso de lanzamiento</p>
+                <p>• Duración de cada sesión: 60 minutos</p>
+                <p>• Modalidad: virtual</p>
+            </div>
+
+            <hr>
+
+            <!-- Propuesta Económica -->
+            <h3 class="section-title">Propuesta Económica</h3>
+            
+            <div class="pricing-card">
+                <h4>Sesiones grupales de coaching</h4>
+                <p class="price">$40.000 por sesión</p>
+                <p class="note">*Este valor contempla un descuento aplicado respecto al valor de la sesión individual, que es de $30.000 por persona.</p>
+            </div>
+
+            <div class="pricing-card-simple">
+                <h4>Sesiones de mentoría</h4>
+                <p class="price">$40.000 por sesión</p>
+                <p class="note">*(En caso de requerirlas en lugar de sesiones de coaching)</p>
+            </div>
+
+            <div class="pricing-card-simple">
+                <h4>Sesiones individuales</h4>
+                <p>En caso de que en algún momento consideren necesario sumar sesiones individuales o espacios adicionales, lo coordinaremos según necesidad al valor de $30.000 por persona.</p>
+            </div>
+
+            <hr>
+
+            <!-- Condiciones -->
+            <h3 class="section-title">Condiciones Generales</h3>
+            <div class="highlight-box">
+                <p>• Las sesiones se coordinan con anticipación según disponibilidad mutua</p>
+                <p>• El pago de cada sesión se realiza previo al encuentro</p>
+                <p>• En caso de cancelación, se solicita aviso con 24 horas de anticipación para poder reprogramar</p>
+                <p>• La confidencialidad y el compromiso mutuo son la base de nuestra relación de coaching</p>
+            </div>
+
+            <hr>
+
+            <!-- Próximos Pasos -->
+            <div class="special-box">
+                <h3>Próximos Pasos</h3>
+                <p>Si sienten que este enfoque es el que están buscando, podemos coordinar el próximo encuentro para definir frecuencia, modalidad y comenzar a trabajar juntas.</p>
+            </div>
+
+            <!-- Programa de Referencias -->
+            <div class="special-box">
+                <h3>Programa de Referencias</h3>
+                <p>Si están experimentando los beneficios de nuestra relación de coaching, seguramente habrá familiares, amigos y compañeros de trabajo a quienes consideren que les vendría bien y podrían estar interesados. Les ofrezco una primera entrevista sin cargo (gratuita) para definir si podemos trabajar juntos.</p>
+            </div>
+
+            <!-- Closing -->
+            <div class="closing-section">
+                <p>Gracias por la confianza y por invitarme a acompañarlas en este proceso tan significativo.</p>
+                <p>Un abrazo,</p>
+                <p class="signature">Flor Cernuschi</p>
+                <p>Coach Profesional</p>
+            </div>
+
+            <hr>
+
+            <!-- ¿Qué es el Coaching? -->
+            <h3 class="section-title">¿Qué es el Coaching?</h3>
+            <div class="highlight-box">
+                <p>El coaching es un proceso de acompañamiento profesional que facilita el desarrollo personal y profesional. A través de conversaciones profundas y reflexivas, el coach ayuda a las personas a clarificar sus objetivos, superar obstáculos, tomar decisiones conscientes y alcanzar sus metas.</p>
+                <p style="margin-top: 1rem;">El coaching se basa en la creencia de que cada persona tiene los recursos necesarios para encontrar sus propias respuestas. El rol del coach es facilitar ese proceso de descubrimiento y acción.</p>
+            </div>
+
+            <hr>
+
+            <!-- Como Coach -->
+            <h3 class="section-title">Como Coach, podés esperar de mí:</h3>
+            <div class="highlight-box">
+                <p>• Escucha activa y presencia plena en cada sesión</p>
+                <p>• Confidencialidad absoluta sobre todo lo conversado</p>
+                <p>• Preguntas poderosas que faciliten tu reflexión y claridad</p>
+                <p>• Honestidad y feedback constructivo cuando sea necesario</p>
+                <p>• Compromiso con tu proceso y tus objetivos</p>
+                <p>• Puntualidad y respeto por los horarios acordados</p>
+                <p>• Un espacio libre de juicio donde puedas explorar y crecer</p>
+            </div>
+
+            <hr>
+
+            <!-- Como Coachees -->
+            <h3 class="section-title">Como mis Coachees, yo espero de ustedes:</h3>
+            <div class="highlight-box">
+                <p>• Compromiso genuino con el proceso y con sus objetivos</p>
+                <p>• Apertura y honestidad en las conversaciones</p>
+                <p>• Disposición para la reflexión profunda y el autoconocimiento</p>
+                <p>• Responsabilidad sobre las acciones acordadas entre sesiones</p>
+                <p>• Puntualidad y respeto por los horarios pactados</p>
+                <p>• Comunicación clara si surge alguna dificultad o necesidad de reprogramar</p>
+                <p>• Confianza en el proceso, incluso cuando aparezcan desafíos</p>
+            </div>
+
+            <hr>
+
+            <!-- Naturaleza -->
+            <h3 class="section-title">Naturaleza de la Sesión de Coaching</h3>
+            <div class="highlight-box">
+                <p>Las sesiones de coaching son conversaciones estructuradas enfocadas en el presente y el futuro. No son terapia psicológica, consultoría ni mentoría tradicional. El coach no da consejos directos ni soluciones, sino que facilita que ustedes encuentren sus propias respuestas y caminos de acción.</p>
+                <p style="margin-top: 1rem;">Cada sesión es un espacio confidencial y seguro donde pueden explorar sus pensamientos, emociones, desafíos y aspiraciones. El foco está en generar conciencia, claridad y acción hacia los objetivos que ustedes definan.</p>
+                <p style="margin-top: 1rem;">El coaching es más efectivo cuando existe un compromiso activo de las coachees con el proceso, incluyendo la implementación de acciones entre sesiones y la reflexión sobre los aprendizajes que van surgiendo.</p>
+            </div>
+
+            <hr>
+
+            <!-- Acuerdo y Firmas -->
+            <div class="signature-section">
+                <h3>Acuerdo de Acompañamiento</h3>
+                
+                <div class="agreement-text">
+                    <p>Al firmar este documento, las partes confirman haber leído, comprendido y aceptado los términos, condiciones y modalidades de trabajo establecidos en esta propuesta de acompañamiento de coaching.</p>
+                </div>
+
+                <!-- Firma Coach -->
+                <div class="signature-box">
+                    <p class="label">Coach:</p>
+                    <p class="name-field">Nombre: Flor Cernuschi</p>
+                    <div class="signature-line">
+                        <p>Firma</p>
+                    </div>
+                    <p class="date-field">Fecha: _____ / _____ / _____</p>
+                </div>
+
+                <!-- Firma Participante 1 -->
+                <div class="signature-box">
+                    <p class="label">Participante 1:</p>
+                    <p class="name-field">Nombre: Euge</p>
+                    <p class="name-field">Apellido: ___________________________</p>
+                    <div class="signature-line">
+                        <p>Firma</p>
+                    </div>
+                    <p class="date-field">Fecha: _____ / _____ / _____</p>
+                </div>
+
+                <!-- Firma Participante 2 -->
+                <div class="signature-box">
+                    <p class="label">Participante 2:</p>
+                    <p class="name-field">Nombre: Fer</p>
+                    <p class="name-field">Apellido: ___________________________</p>
+                    <div class="signature-line">
+                        <p>Firma</p>
+                    </div>
+                    <p class="date-field">Fecha: _____ / _____ / _____</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-header">
+                <h2>CALIMBA</h2>
+                <p>Profesionales en el camino</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="contact-row">
+                    <div class="contact-item">
+                        <strong>WhatsApp:</strong>
+                        <span>+54 9 11 5384-2626</span>
+                    </div>
+                    <span class="separator">|</span>
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <span>cernuschiflorencia@gmail.com</span>
+                    </div>
+                </div>
+                <div class="footer-link">
+                    <a href="https://buscatucoach.com/coaches/florencia-cernuschi/" target="_blank" rel="noopener noreferrer">
+                        buscatucoach.com/coaches/florencia-cernuschi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <div class="print-button">
+        <button onclick="downloadPDF()">Descargar como PDF</button>
+        <button onclick="window.print()" style="margin-left: 1rem; background: #764ba2;">Imprimir</button>
+    </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            const element = document.querySelector('.container');
+            const button = document.querySelector('.print-button');
+            
+            // Ocultar el botón temporalmente
+            button.style.display = 'none';
+            
+            const opt = {
+                margin: 10,
+                filename: 'Propuesta_Coaching_Calimba.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Mostrar el botón nuevamente
+                button.style.display = 'block';
+            });
+        }
+    </script>
+    
+</body>
+</html>
